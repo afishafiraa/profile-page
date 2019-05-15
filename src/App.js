@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import { BrowserRouter, Link } from 'react-router-dom';
+
+import About from "./About";
 
 class App extends Component {
   constructor(props){
@@ -20,7 +23,7 @@ class App extends Component {
 
   render() {
     return (
-
+			<BrowserRouter>
         <div>
         <header id="header">
 		    <div class="container main-menu">
@@ -30,8 +33,8 @@ class App extends Component {
 			      </div>
 			      <nav id="nav-menu-container">
 			        <ul class="nav-menu">
-			          <li><a href="index.html">Home</a></li>
-			          <li><a href="about.js">About</a></li>
+			          <li><Link to="/about">Home</Link></li>
+			          <li><a href="About.js">About</a></li>
 			          <li><a href="services.html">Services</a></li>
 			          <li><a href="portfolio.html">Portfolio</a></li>
 			          <li><a href="price.html">Pricing</a></li>
@@ -53,11 +56,13 @@ class App extends Component {
 			            </ul>
 			          </li>					          					          		          
 			          <li><a href="contact.html">Contact</a></li>
+								<Router path="/about" component={About}/>
 			        </ul>
 			      </nav>		
 		    	</div>
 		    </div>
 		  </header>
+			
       
       <section class="banner-area">
 				<div class="container">
@@ -78,6 +83,7 @@ class App extends Component {
 			</section>
       
       </div>
+			</BrowserRouter>
     );
   }
 }
